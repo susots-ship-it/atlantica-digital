@@ -1,0 +1,47 @@
+---
+import type { Lang } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const services = [
+  { icon: '🌐', key: 'web' },
+  { icon: '⚡', key: 'hosting' },
+  { icon: '📈', key: 'seo' },
+  { icon: '🎯', key: 'ads' },
+  { icon: '📱', key: 'social' },
+  { icon: '🛡️', key: 'maintenance' },
+] as const;
+---
+
+<section id="servicios" class="py-28 px-4 md:px-8 bg-surface-secondary relative">
+  <div class="text-center max-w-[600px] mx-auto mb-16 reveal">
+    <span class="inline-block text-xs font-semibold uppercase tracking-[0.15em] text-brand-light mb-4">{t('services.tag')}</span>
+    <h2 class="font-display text-[clamp(2rem,4vw,2.8rem)] font-bold leading-tight mb-4">{t('services.title')}</h2>
+    <p class="text-[1.05rem] text-txt-secondary leading-relaxed">{t('services.subtitle')}</p>
+  </div>
+
+  <div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {services.map(({ icon, key }) => (
+      <div class="bg-surface-card border border-border rounded-card p-10 transition-all duration-400 relative overflow-hidden service-card-border hover:bg-surface-card-hover hover:border-border-hover hover:-translate-y-1 reveal">
+        <div class="w-[52px] h-[52px] rounded-[14px] flex items-center justify-center text-2xl mb-6 bg-brand-glow border border-[rgba(59,130,246,0.15)]">
+          {icon}
+        </div>
+        <h3 class="font-display text-xl font-bold mb-3">{t(`services.${key}.title` as any)}</h3>
+        <p class="text-txt-secondary text-sm leading-relaxed mb-6">{t(`services.${key}.desc` as any)}</p>
+        <ul class="flex flex-col gap-2">
+          {[1, 2, 3, 4].map(n => (
+            <li class="flex items-center gap-2.5 text-sm text-txt-secondary service-check">
+              {t(`services.${key}.f${n}` as any)}
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+</section>

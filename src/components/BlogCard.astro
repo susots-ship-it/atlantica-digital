@@ -1,0 +1,49 @@
+---
+import type { Lang } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+
+interface Props {
+  title: string;
+  description: string;
+  date: string;
+  slug: string;
+  lang: Lang;
+  location: string[];
+  locationLabels: string[];
+  image?: string;
+}
+
+const { title, description, date, slug, lang, location, locationLabels, image } = Astro.props;
+const t = useTranslations(lang);
+const locationPath = lang === 'es' ? 'ubicacion' : 'location';
+const formattedDate = new Date(date).toLocaleDateString(lang === 'es' ? 'es-ES' : 'en-GB', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<a href={`/${lang}/blog/${slug}/`} class="group block bg-surface-card border border-border rounded-card overflow-hidden transition-all duration-300 hover:bg-surface-card-hover hover:border-border-hover hover:-translate-y-1 service-card-border relative">
+  {image && (
+    <img src={image} alt={title} class="w-full h-48 object-cover" />
+  )}
+
+  <div class="p-8">
+    <div class="flex flex-wrap gap-2 mb-4">
+      {location.map((loc, i) => (
+        <span class="inline-flex items-center gap-1 px-2.5 py-0.5 text-xs font-medium bg-brand-glow text-brand-light border border-[rgba(59,130,246,0.15)] rounded-full">
+          <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+          {locationLabels[i]}
+        </span>
+      ))}
+    </div>
+
+    <h3 class="font-display text-lg font-bold mb-3 text-txt-primary group-hover:text-brand-light transition-colors leading-snug">{title}</h3>
+    <p class="text-txt-secondary text-sm leading-relaxed mb-4 line-clamp-3">{description}</p>
+
+    <div class="flex items-center justify-between">
+      <time class="text-xs text-txt-muted" datetime={date}>{formattedDate}</time>
+      <span class="text-brand-light text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">{t('blog.readMore')}</span>
+    </div>
+  </div>
+</a>

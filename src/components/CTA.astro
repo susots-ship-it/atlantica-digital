@@ -1,0 +1,27 @@
+---
+import type { Lang } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section id="contacto" class="py-28 px-4 md:px-8 bg-surface-secondary text-center relative overflow-hidden cta-glow">
+  <div class="relative z-[2] max-w-[600px] mx-auto reveal">
+    <span class="inline-block text-xs font-semibold uppercase tracking-[0.15em] text-brand-light mb-4">{t('cta.tag')}</span>
+    <h2 class="font-display text-[clamp(2rem,4vw,2.6rem)] font-bold mb-4">{t('cta.title')}</h2>
+    <p class="text-txt-secondary text-[1.05rem] mb-8">{t('cta.subtitle')}</p>
+    <div class="flex gap-4 justify-center flex-wrap">
+      <a href="https://wa.me/34669855353?text=Hola%2C%20me%20interesa%20una%20consulta%20digital%20gratuita" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-8 py-3.5 bg-gradient-to-br from-brand to-accent text-white rounded-full font-semibold text-[0.95rem] hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(59,130,246,0.35)] transition-all duration-300">
+        {t('cta.whatsapp')}
+      </a>
+      <a href="mailto:hola@atlanticadigital.es" class="inline-flex items-center gap-2 px-8 py-3.5 bg-transparent text-txt-primary rounded-full font-semibold text-[0.95rem] border border-border-hover hover:bg-white/[0.04] hover:border-white/20 transition-all duration-300">
+        {t('cta.email')}
+      </a>
+    </div>
+  </div>
+</section>

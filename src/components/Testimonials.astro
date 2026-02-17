@@ -1,0 +1,41 @@
+---
+import type { Lang } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const testimonials = [1, 2, 3] as const;
+---
+
+<section id="testimonios" class="py-28 px-4 md:px-8 bg-surface-primary relative">
+  <div class="text-center max-w-[600px] mx-auto mb-16 reveal">
+    <span class="inline-block text-xs font-semibold uppercase tracking-[0.15em] text-brand-light mb-4">{t('testimonials.tag')}</span>
+    <h2 class="font-display text-[clamp(2rem,4vw,2.8rem)] font-bold leading-tight mb-4">{t('testimonials.title')}</h2>
+    <p class="text-[1.05rem] text-txt-secondary leading-relaxed">{t('testimonials.subtitle')}</p>
+  </div>
+
+  <div class="max-w-[1000px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+    {testimonials.map(n => (
+      <div class="bg-surface-card border border-border rounded-card p-8 transition-all duration-300 hover:border-border-hover reveal">
+        <div class="text-amber-400 text-sm tracking-widest mb-4">★★★★★</div>
+        <blockquote class="text-txt-secondary text-sm leading-relaxed italic mb-6">
+          {t(`testimonials.t${n}.quote` as any)}
+        </blockquote>
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-full bg-gradient-to-br from-brand to-accent flex items-center justify-center font-bold text-sm text-white">
+            {t(`testimonials.t${n}.initials` as any)}
+          </div>
+          <div>
+            <strong class="block text-sm font-semibold">{t(`testimonials.t${n}.name` as any)}</strong>
+            <span class="text-xs text-txt-muted">{t(`testimonials.t${n}.role` as any)}</span>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

@@ -1,0 +1,69 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Nav from '../../../components/Nav.astro';
+import Footer from '../../../components/Footer.astro';
+import BlogCard from '../../../components/BlogCard.astro';
+import { useTranslations } from '../../../i18n/utils';
+
+const lang = 'en' as const;
+const t = useTranslations(lang);
+
+const posts = (await getCollection('blog'))
+  .filter(post => post.data.lang === 'en')
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+
+const allLocations: { slug: string; label: string }[] = [];
+posts.forEach(post => {
+  post.data.location.forEach((loc, i) => {
+    if (!allLocations.find(l => l.slug === loc)) {
+      allLocations.push({ slug: loc, label: post.data.locationLabels[i] });
+    }
+  });
+});
+---
+
+<BaseLayout lang={lang}>
+  <Nav lang={lang} />
+
+  <main class="pt-32 pb-20 px-4 md:px-8">
+    <div class="max-w-[1200px] mx-auto">
+      <div class="text-center max-w-[600px] mx-auto mb-16">
+        <h1 class="font-display text-[clamp(2rem,5vw,3rem)] font-bold leading-tight mb-4">{t('blog.title')}</h1>
+        <p class="text-[1.05rem] text-txt-secondary leading-relaxed">{t('blog.subtitle')}</p>
+      </div>
+
+      {allLocations.length > 0 && (
+        <div class="flex flex-wrap items-center justify-center gap-3 mb-12">
+          <span class="text-sm text-txt-muted">{t('blog.filterByLocation')}:</span>
+          {allLocations.map(loc => (
+            <a
+              href={`/${lang}/blog/location/${loc.slug}/`}
+              class="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-medium bg-brand-glow text-brand-light border border-[rgba(59,130,246,0.15)] rounded-full hover:bg-[rgba(59,130,246,0.25)] transition-colors"
+            >
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+              {loc.label}
+            </a>
+          ))}
+        </div>
+      )}
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {posts.map(post => (
+          <BlogCard
+            title={post.data.title}
+            description={post.data.description}
+            date={post.data.date.toISOString()}
+            slug={post.id}
+            lang={lang}
+            location={post.data.location}
+            locationLabels={post.data.locationLabels}
+            image={post.data.image}
+          />
+        ))}
+      </div>
+    </div>
+  </main>
+
+  <Footer lang={lang} />
+</BaseLayout>

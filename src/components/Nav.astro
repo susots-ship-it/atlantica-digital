@@ -1,0 +1,63 @@
+---
+import type { Lang } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const otherLang = lang === 'es' ? 'en' : 'es';
+const otherLabel = lang === 'es' ? 'EN' : 'ES';
+---
+
+<nav class="fixed top-0 left-0 right-0 z-[1000] px-4 md:px-8 py-4 bg-[rgba(10,10,15,0.8)] backdrop-blur-xl border-b border-border transition-all duration-300">
+  <div class="max-w-[1200px] mx-auto flex items-center justify-between">
+    <a href={`/${lang}/`} class="flex items-center gap-2.5 no-underline">
+      <div class="w-9 h-9 bg-gradient-to-br from-brand to-accent rounded-[10px] flex items-center justify-center font-display font-extrabold text-lg text-white">A</div>
+      <div class="font-display text-xl font-bold text-txt-primary">Atlántica <span class="bg-gradient-to-br from-brand to-accent bg-clip-text text-transparent">Digital</span></div>
+    </a>
+
+    <ul id="navLinks" class="hidden md:flex items-center gap-8 list-none">
+      <li><a href="#servicios" class="text-txt-secondary text-sm font-medium tracking-wide hover:text-txt-primary transition-colors duration-300">{t('nav.services')}</a></li>
+      <li><a href="#planes" class="text-txt-secondary text-sm font-medium tracking-wide hover:text-txt-primary transition-colors duration-300">{t('nav.plans')}</a></li>
+      <li><a href="#proceso" class="text-txt-secondary text-sm font-medium tracking-wide hover:text-txt-primary transition-colors duration-300">{t('nav.process')}</a></li>
+      <li><a href="#testimonios" class="text-txt-secondary text-sm font-medium tracking-wide hover:text-txt-primary transition-colors duration-300">{t('nav.clients')}</a></li>
+      <li><a href={`/${lang}/blog/`} class="text-txt-secondary text-sm font-medium tracking-wide hover:text-txt-primary transition-colors duration-300">{t('nav.blog')}</a></li>
+      <li><a href={`/${otherLang}/`} class="text-txt-secondary text-sm font-medium tracking-wide hover:text-txt-primary transition-colors duration-300">{otherLabel}</a></li>
+      <li><a href="#contacto" class="px-5 py-2 bg-gradient-to-br from-brand to-accent text-white rounded-full font-semibold hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(59,130,246,0.3)] transition-all duration-300">{t('nav.cta')}</a></li>
+    </ul>
+
+    <button id="mobileToggle" class="flex md:hidden flex-col gap-[5px] cursor-pointer bg-transparent border-none p-1" aria-label="Toggle menu">
+      <span class="w-6 h-0.5 bg-txt-primary rounded-sm transition-all duration-300"></span>
+      <span class="w-6 h-0.5 bg-txt-primary rounded-sm transition-all duration-300"></span>
+      <span class="w-6 h-0.5 bg-txt-primary rounded-sm transition-all duration-300"></span>
+    </button>
+  </div>
+</nav>
+
+<script>
+  document.getElementById('mobileToggle')?.addEventListener('click', () => {
+    const links = document.getElementById('navLinks');
+    if (links) {
+      links.classList.toggle('mobile-open');
+    }
+  });
+</script>
+
+<style>
+  #navLinks.mobile-open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(10, 10, 15, 0.97);
+    backdrop-filter: blur(20px);
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    gap: 1rem;
+  }
+</style>

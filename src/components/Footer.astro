@@ -1,0 +1,66 @@
+---
+import type { Lang } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<footer class="bg-surface-primary border-t border-border pt-16 pb-8 px-4 md:px-8">
+  <div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-8 lg:gap-12 pb-12 border-b border-border">
+    <!-- Brand -->
+    <div>
+      <a href={`/${lang}/`} class="flex items-center gap-2.5 no-underline mb-4">
+        <div class="w-9 h-9 bg-gradient-to-br from-brand to-accent rounded-[10px] flex items-center justify-center font-display font-extrabold text-lg text-white">A</div>
+        <div class="font-display text-xl font-bold text-txt-primary">Atlántica <span class="bg-gradient-to-br from-brand to-accent bg-clip-text text-transparent">Digital</span></div>
+      </a>
+      <p class="text-txt-secondary text-sm leading-relaxed max-w-[300px]">{t('footer.brand.desc')}</p>
+    </div>
+
+    <!-- Services -->
+    <div>
+      <h4 class="font-display text-[0.95rem] font-bold mb-4">{t('footer.services')}</h4>
+      <ul class="flex flex-col gap-2.5 list-none">
+        <li><a href="#servicios" class="text-txt-secondary text-sm hover:text-brand-light transition-colors duration-300">{t('footer.services.web')}</a></li>
+        <li><a href="#servicios" class="text-txt-secondary text-sm hover:text-brand-light transition-colors duration-300">{t('footer.services.hosting')}</a></li>
+        <li><a href="#servicios" class="text-txt-secondary text-sm hover:text-brand-light transition-colors duration-300">{t('footer.services.seo')}</a></li>
+        <li><a href="#servicios" class="text-txt-secondary text-sm hover:text-brand-light transition-colors duration-300">{t('footer.services.ads')}</a></li>
+      </ul>
+    </div>
+
+    <!-- Company -->
+    <div>
+      <h4 class="font-display text-[0.95rem] font-bold mb-4">{t('footer.company')}</h4>
+      <ul class="flex flex-col gap-2.5 list-none">
+        <li><a href="#proceso" class="text-txt-secondary text-sm hover:text-brand-light transition-colors duration-300">{t('footer.company.process')}</a></li>
+        <li><a href="#planes" class="text-txt-secondary text-sm hover:text-brand-light transition-colors duration-300">{t('footer.company.plans')}</a></li>
+        <li><a href="#testimonios" class="text-txt-secondary text-sm hover:text-brand-light transition-colors duration-300">{t('footer.company.clients')}</a></li>
+        <li><a href="#contacto" class="text-txt-secondary text-sm hover:text-brand-light transition-colors duration-300">{t('footer.company.contact')}</a></li>
+      </ul>
+    </div>
+
+    <!-- Legal -->
+    <div>
+      <h4 class="font-display text-[0.95rem] font-bold mb-4">{t('footer.legal')}</h4>
+      <ul class="flex flex-col gap-2.5 list-none">
+        <li><a href="#" class="text-txt-secondary text-sm hover:text-brand-light transition-colors duration-300">{t('footer.legal.notice')}</a></li>
+        <li><a href="#" class="text-txt-secondary text-sm hover:text-brand-light transition-colors duration-300">{t('footer.legal.privacy')}</a></li>
+        <li><a href="#" class="text-txt-secondary text-sm hover:text-brand-light transition-colors duration-300">{t('footer.legal.cookies')}</a></li>
+        <li><a href="#" class="text-txt-secondary text-sm hover:text-brand-light transition-colors duration-300">{t('footer.legal.kit')}</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="max-w-[1200px] mx-auto pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+    <p class="text-txt-muted text-xs">{t('footer.copyright')}</p>
+    <div class="flex gap-4">
+      <a href="#" title="Instagram" class="w-9 h-9 rounded-[10px] border border-border flex items-center justify-center text-txt-secondary text-sm hover:border-brand hover:text-brand-light hover:bg-brand-glow transition-all duration-300">IG</a>
+      <a href="#" title="LinkedIn" class="w-9 h-9 rounded-[10px] border border-border flex items-center justify-center text-txt-secondary text-sm hover:border-brand hover:text-brand-light hover:bg-brand-glow transition-all duration-300">IN</a>
+      <a href="#" title="Facebook" class="w-9 h-9 rounded-[10px] border border-border flex items-center justify-center text-txt-secondary text-sm hover:border-brand hover:text-brand-light hover:bg-brand-glow transition-all duration-300">FB</a>
+    </div>
+  </div>
+</footer>

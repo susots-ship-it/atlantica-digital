@@ -1,0 +1,67 @@
+---
+import type { Lang } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const plans = [
+  { key: 'essential', featured: false },
+  { key: 'growth', featured: true },
+  { key: 'premium', featured: false },
+] as const;
+---
+
+<section id="planes" class="py-28 px-4 md:px-8 bg-surface-primary relative">
+  <div class="text-center max-w-[600px] mx-auto mb-16 reveal">
+    <span class="inline-block text-xs font-semibold uppercase tracking-[0.15em] text-brand-light mb-4">{t('pricing.tag')}</span>
+    <h2 class="font-display text-[clamp(2rem,4vw,2.8rem)] font-bold leading-tight mb-4">{t('pricing.title')}</h2>
+    <p class="text-[1.05rem] text-txt-secondary leading-relaxed">{t('pricing.subtitle')}</p>
+  </div>
+
+  <div class="max-w-[1100px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+    {plans.map(({ key, featured }) => (
+      <div class:list={[
+        'bg-surface-card border rounded-card p-10 relative transition-all duration-400 hover:-translate-y-1 reveal',
+        featured
+          ? 'border-brand bg-gradient-to-b from-[rgba(59,130,246,0.08)] to-surface-card shadow-[0_0_60px_rgba(59,130,246,0.08)] hover:border-brand'
+          : 'border-border hover:border-border-hover',
+      ]}>
+        {featured && (
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-5 py-1.5 bg-gradient-to-br from-brand to-accent text-white text-[0.72rem] font-bold uppercase tracking-widest rounded-full">
+            {t('pricing.popular')}
+          </div>
+        )}
+        <div class="font-display text-xl font-bold mb-2">{t(`pricing.${key}.name` as any)}</div>
+        <div class="text-txt-muted text-sm mb-6">{t(`pricing.${key}.desc` as any)}</div>
+        <div class="flex items-baseline gap-1 mb-1">
+          <span class="text-xl font-semibold text-txt-secondary">€</span>
+          <span class="font-display text-5xl font-extrabold leading-none">{t(`pricing.${key}.price` as any)}</span>
+        </div>
+        <div class="text-sm text-txt-muted mb-8">{t('pricing.period')}</div>
+        <ul class="flex flex-col gap-3 mb-8">
+          {[1, 2, 3, 4, 5, 6].map(n => (
+            <li class="flex items-start gap-3 text-sm text-txt-secondary pricing-bullet">
+              {t(`pricing.${key}.f${n}` as any)}
+            </li>
+          ))}
+        </ul>
+        <a
+          href="#contacto"
+          class:list={[
+            'w-full flex justify-center items-center gap-2 py-3.5 px-6 rounded-full font-semibold text-[0.95rem] transition-all duration-300',
+            featured
+              ? 'bg-gradient-to-br from-brand to-accent text-white hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(59,130,246,0.35)]'
+              : 'bg-transparent text-txt-primary border border-border-hover hover:bg-white/[0.04] hover:border-white/20',
+          ]}
+        >
+          {t(`pricing.${key}.cta` as any)}
+        </a>
+      </div>
+    ))}
+  </div>
+</section>
