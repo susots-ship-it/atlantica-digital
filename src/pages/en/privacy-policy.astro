@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+
+const lang = 'en';
+---
+
+<BaseLayout lang={lang}>
+  <Nav lang={lang} />
+
+  <main class="pt-32 pb-20 px-4 md:px-8">
+    <div class="max-w-[800px] mx-auto prose prose-invert prose-headings:font-display prose-headings:text-txt-primary prose-p:text-txt-secondary prose-li:text-txt-secondary prose-a:text-brand-light prose-strong:text-txt-primary">
+
+      <h1>Privacy Policy</h1>
+      <p><strong>Last updated:</strong> February 2026</p>
+
+      <h2>1. Data controller</h2>
+      <ul>
+        <li><strong>Controller:</strong> Travesía21 [TO BE COMPLETED]</li>
+        <li><strong>Tax ID (CIF/NIF):</strong> [TO BE COMPLETED]</li>
+        <li><strong>Address:</strong> [TO BE COMPLETED], A Coruña, Spain</li>
+        <li><strong>Contact email:</strong> [TO BE COMPLETED]@travesia21.es</li>
+      </ul>
+
+      <h2>2. Data we collect</h2>
+      <p>At Travesía21, we process the personal data you provide when:</p>
+      <ul>
+        <li>Filling out the contact form: name, email, phone number and message.</li>
+        <li>Sending us an email or contacting us via WhatsApp.</li>
+        <li>Browsing our website (browsing data collected through cookies).</li>
+      </ul>
+
+      <h2>3. Purpose of processing</h2>
+      <p>The personal data you provide will be processed for the following purposes:</p>
+      <ul>
+        <li>Responding to your enquiries and quote requests.</li>
+        <li>Managing the commercial relationship and the provision of our services.</li>
+        <li>Sending you commercial communications about our services, provided you have given your consent.</li>
+        <li>Improving our website and user experience through analysis of browsing data.</li>
+      </ul>
+
+      <h2>4. Legal basis</h2>
+      <p>The processing of your data is based on:</p>
+      <ul>
+        <li><strong>Consent:</strong> by filling out forms or contacting us, you consent to the processing of your data for the stated purpose.</li>
+        <li><strong>Performance of a contract:</strong> when the data is necessary for the provision of contracted services.</li>
+        <li><strong>Legitimate interest:</strong> to improve our services and user experience.</li>
+      </ul>
+
+      <h2>5. Data retention period</h2>
+      <p>Personal data will be retained for as long as the commercial relationship is maintained or for the time necessary to comply with legal obligations. When the data is no longer needed, it will be deleted with appropriate security measures.</p>
+
+      <h2>6. Data disclosure to third parties</h2>
+      <p>Personal data will not be disclosed to third parties, except where required by law. Specifically, data may be disclosed to:</p>
+      <ul>
+        <li>Public authorities in the cases provided for by law.</li>
+        <li>Service providers acting as data processors (hosting, email, analytics tools), with whom the corresponding data processing agreements have been signed.</li>
+      </ul>
+
+      <h2>7. User rights</h2>
+      <p>In accordance with the General Data Protection Regulation (GDPR), you may exercise the following rights:</p>
+      <ul>
+        <li><strong>Access:</strong> to know what personal data of yours we process.</li>
+        <li><strong>Rectification:</strong> to request the correction of inaccurate data.</li>
+        <li><strong>Erasure:</strong> to request the deletion of your data when it is no longer necessary.</li>
+        <li><strong>Objection:</strong> to object to the processing of your data.</li>
+        <li><strong>Restriction:</strong> to request the restriction of processing under certain circumstances.</li>
+        <li><strong>Portability:</strong> to receive your data in a structured, commonly used format.</li>
+      </ul>
+      <p>To exercise these rights, you can contact us at <strong>[TO BE COMPLETED]@travesia21.es</strong>, stating your identity and the right you wish to exercise.</p>
+      <p>You also have the right to lodge a complaint with the <strong>Spanish Data Protection Agency</strong> (<a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer">www.aepd.es</a>) if you consider that the processing of your data is not appropriate.</p>
+
+      <h2>8. Security measures</h2>
+      <p>At Travesía21, we adopt the necessary technical and organisational measures to ensure the security of personal data and prevent its alteration, loss, unauthorised processing or access, taking into account the state of technology, the nature of the data stored and the risks to which they are exposed.</p>
+
+    </div>
+  </main>
+
+  <Footer lang={lang} />
+</BaseLayout>

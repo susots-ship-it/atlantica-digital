@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+
+const lang = 'es';
+---
+
+<BaseLayout lang={lang}>
+  <Nav lang={lang} />
+
+  <main class="pt-32 pb-20 px-4 md:px-8">
+    <div class="max-w-[800px] mx-auto prose prose-invert prose-headings:font-display prose-headings:text-txt-primary prose-p:text-txt-secondary prose-li:text-txt-secondary prose-a:text-brand-light prose-strong:text-txt-primary">
+
+      <h1>Política de Privacidad</h1>
+      <p><strong>Última actualización:</strong> febrero 2026</p>
+
+      <h2>1. Responsable del tratamiento</h2>
+      <ul>
+        <li><strong>Responsable:</strong> Travesía21 [COMPLETAR RAZÓN SOCIAL]</li>
+        <li><strong>CIF/NIF:</strong> [COMPLETAR]</li>
+        <li><strong>Dirección:</strong> [COMPLETAR], A Coruña, España</li>
+        <li><strong>Email de contacto:</strong> [COMPLETAR]@travesia21.es</li>
+      </ul>
+
+      <h2>2. Datos que recopilamos</h2>
+      <p>En Travesía21 tratamos los datos personales que nos facilitas al:</p>
+      <ul>
+        <li>Rellenar el formulario de contacto: nombre, email, teléfono y mensaje.</li>
+        <li>Enviarnos un email o contactarnos por WhatsApp.</li>
+        <li>Navegar por nuestro sitio web (datos de navegación recogidos mediante cookies).</li>
+      </ul>
+
+      <h2>3. Finalidad del tratamiento</h2>
+      <p>Los datos personales que nos facilites serán tratados con las siguientes finalidades:</p>
+      <ul>
+        <li>Responder a tus consultas y solicitudes de presupuesto.</li>
+        <li>Gestionar la relación comercial y la prestación de nuestros servicios.</li>
+        <li>Enviarte comunicaciones comerciales sobre nuestros servicios, siempre que hayas dado tu consentimiento.</li>
+        <li>Mejorar nuestro sitio web y la experiencia de usuario mediante el análisis de datos de navegación.</li>
+      </ul>
+
+      <h2>4. Base legal</h2>
+      <p>El tratamiento de tus datos se basa en:</p>
+      <ul>
+        <li><strong>Consentimiento:</strong> al rellenar formularios o contactarnos, consientes el tratamiento de tus datos para la finalidad indicada.</li>
+        <li><strong>Ejecución de contrato:</strong> cuando los datos son necesarios para la prestación de los servicios contratados.</li>
+        <li><strong>Interés legítimo:</strong> para mejorar nuestros servicios y la experiencia de usuario.</li>
+      </ul>
+
+      <h2>5. Plazo de conservación</h2>
+      <p>Los datos personales se conservarán mientras se mantenga la relación comercial o durante el tiempo necesario para cumplir con las obligaciones legales. Cuando los datos dejen de ser necesarios, se suprimirán con las medidas de seguridad adecuadas.</p>
+
+      <h2>6. Comunicación de datos a terceros</h2>
+      <p>Los datos personales no se cederán a terceros, salvo obligación legal. En concreto, se podrán comunicar a:</p>
+      <ul>
+        <li>Administraciones públicas en los casos previstos por la ley.</li>
+        <li>Proveedores de servicios que actúan como encargados de tratamiento (hosting, email, herramientas de analítica), con los que se han firmado los correspondientes contratos de encargo de tratamiento.</li>
+      </ul>
+
+      <h2>7. Derechos del usuario</h2>
+      <p>De acuerdo con el Reglamento General de Protección de Datos (RGPD), puedes ejercer los siguientes derechos:</p>
+      <ul>
+        <li><strong>Acceso:</strong> conocer qué datos personales tuyos tratamos.</li>
+        <li><strong>Rectificación:</strong> solicitar la corrección de datos inexactos.</li>
+        <li><strong>Supresión:</strong> solicitar la eliminación de tus datos cuando ya no sean necesarios.</li>
+        <li><strong>Oposición:</strong> oponerte al tratamiento de tus datos.</li>
+        <li><strong>Limitación:</strong> solicitar la limitación del tratamiento en determinadas circunstancias.</li>
+        <li><strong>Portabilidad:</strong> recibir tus datos en un formato estructurado y de uso común.</li>
+      </ul>
+      <p>Para ejercer estos derechos, puedes contactarnos en <strong>[COMPLETAR]@travesia21.es</strong> indicando tu identidad y el derecho que deseas ejercer.</p>
+      <p>También tienes derecho a presentar una reclamación ante la <strong>Agencia Española de Protección de Datos</strong> (<a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer">www.aepd.es</a>) si consideras que el tratamiento de tus datos no es adecuado.</p>
+
+      <h2>8. Medidas de seguridad</h2>
+      <p>En Travesía21 adoptamos las medidas técnicas y organizativas necesarias para garantizar la seguridad de los datos personales y evitar su alteración, pérdida, tratamiento o acceso no autorizado, habida cuenta del estado de la tecnología, la naturaleza de los datos almacenados y los riesgos a que están expuestos.</p>
+
+    </div>
+  </main>
+
+  <Footer lang={lang} />
+</BaseLayout>

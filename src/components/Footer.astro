@@ -15,8 +15,8 @@ const t = useTranslations(lang);
     <!-- Brand -->
     <div>
       <a href={`/${lang}/`} class="flex items-center gap-2.5 no-underline mb-4">
-        <div class="w-9 h-9 bg-gradient-to-br from-brand to-accent rounded-[10px] flex items-center justify-center font-display font-extrabold text-lg text-white">A</div>
-        <div class="font-display text-xl font-bold text-txt-primary">Atlántica <span class="bg-gradient-to-br from-brand to-accent bg-clip-text text-transparent">Digital</span></div>
+        <div class="w-9 h-9 bg-gradient-to-br from-brand to-accent rounded-[10px] flex items-center justify-center font-display font-extrabold text-lg text-white">T</div>
+        <div class="font-display text-xl font-bold text-txt-primary">Travesía<span class="bg-gradient-to-br from-brand to-accent bg-clip-text text-transparent">21</span></div>
       </a>
       <p class="text-txt-secondary text-sm leading-relaxed max-w-[300px]">{t('footer.brand.desc')}</p>
     </div>
@@ -47,10 +47,9 @@ const t = useTranslations(lang);
     <div>
       <h4 class="font-display text-[0.95rem] font-bold mb-4">{t('footer.legal')}</h4>
       <ul class="flex flex-col gap-2.5 list-none">
-        <li><a href="#" class="text-txt-secondary text-sm hover:text-brand-light transition-colors duration-300">{t('footer.legal.notice')}</a></li>
-        <li><a href="#" class="text-txt-secondary text-sm hover:text-brand-light transition-colors duration-300">{t('footer.legal.privacy')}</a></li>
-        <li><a href="#" class="text-txt-secondary text-sm hover:text-brand-light transition-colors duration-300">{t('footer.legal.cookies')}</a></li>
-        <li><a href="#" class="text-txt-secondary text-sm hover:text-brand-light transition-colors duration-300">{t('footer.legal.kit')}</a></li>
+        <li><a href={lang === 'es' ? '/es/aviso-legal/' : '/en/legal-notice/'} class="text-txt-secondary text-sm hover:text-brand-light transition-colors duration-300">{t('footer.legal.notice')}</a></li>
+        <li><a href={lang === 'es' ? '/es/politica-privacidad/' : '/en/privacy-policy/'} class="text-txt-secondary text-sm hover:text-brand-light transition-colors duration-300">{t('footer.legal.privacy')}</a></li>
+        <li><a href={lang === 'es' ? '/es/politica-cookies/' : '/en/cookies-policy/'} class="text-txt-secondary text-sm hover:text-brand-light transition-colors duration-300">{t('footer.legal.cookies')}</a></li>
       </ul>
     </div>
   </div>

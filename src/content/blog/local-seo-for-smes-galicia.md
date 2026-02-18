@@ -9,7 +9,7 @@ location:
 locationLabels:
   - "A Coruña"
   - "Galicia"
-author: "Atlántica Digital"
+author: "Travesía21"
 tags:
   - seo
   - local-marketing
@@ -81,7 +81,7 @@ Local SEO isn't instant, but results are usually seen faster than traditional SE
 
 ## How we can help
 
-At Atlántica Digital we've been helping SMEs and freelancers in A Coruña and across Galicia improve their Google presence for years. Our local SEO service includes:
+At Travesía21 we've been helping SMEs and freelancers in A Coruña and across Galicia improve their Google presence for years. Our local SEO service includes:
 
 - Complete SEO audit of your business
 - Google Business Profile optimization

@@ -10,7 +10,7 @@ locationLabels:
   - "Santiago de Compostela"
   - "Galicia"
 image: "/blog/diseno-web-tatuador-santiago-de-compostela.svg"
-author: "Atlántica Digital"
+author: "Travesía21"
 tags:
   - web-design
   - tattoo
@@ -170,7 +170,7 @@ You don't need to spend a fortune. A professional website for a tattoo studio in
 - **Perfect mobile adaptation** across all devices
 - **Fast, secure hosting** with SSL included and backups
 
-At Atlantica Digital we build websites for local businesses in Santiago and across Galicia. We know how to rank a tattoo studio because **we're here, we know the city, and we understand the local market**.
+At Travesía21 we build websites for local businesses in Santiago and across Galicia. We know how to rank a tattoo studio because **we're here, we know the city, and we understand the local market**.
 
 ---
 
@@ -198,7 +198,7 @@ One of our clients in the creative sector went from receiving 2-3 weekly enquiri
 
 If you have a tattoo studio in Santiago de Compostela and want to stop relying solely on social media, you need a website that works for you around the clock.
 
-At Atlantica Digital we help you:
+At Travesía21 we help you:
 
 - Design a website that reflects your unique artistic style
 - Rank it on Google for local searches in Santiago de Compostela

@@ -9,7 +9,7 @@ location:
 locationLabels:
   - "A Coruña"
   - "Galicia"
-author: "Atlántica Digital"
+author: "Travesía21"
 tags:
   - seo
   - marketing-local
@@ -81,7 +81,7 @@ El SEO local no es inmediato, pero los resultados suelen verse antes que el SEO 
 
 ## Cómo podemos ayudarte
 
-En Atlántica Digital llevamos años ayudando a pymes y autónomos de A Coruña y toda Galicia a mejorar su presencia en Google. Nuestro servicio de SEO local incluye:
+En Travesía21 llevamos años ayudando a pymes y autónomos de A Coruña y toda Galicia a mejorar su presencia en Google. Nuestro servicio de SEO local incluye:
 
 - Auditoría SEO completa de tu negocio
 - Optimización de Google Business Profile

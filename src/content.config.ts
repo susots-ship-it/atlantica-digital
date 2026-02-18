@@ -11,7 +11,7 @@ const blog = defineCollection({
     location: z.array(z.string()),
     locationLabels: z.array(z.string()),
     image: z.string().optional(),
-    author: z.string().default('Atlántica Digital'),
+    author: z.string().default('Travesía21'),
     tags: z.array(z.string()).optional(),
   }),
 });

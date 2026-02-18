@@ -124,7 +124,7 @@ export const ui = {
     'testimonials.tag': 'Clientes',
     'testimonials.title': 'Lo que dicen nuestros clientes',
     'testimonials.subtitle': 'Negocios reales con resultados reales.',
-    'testimonials.t1.quote': '"Antes tenía un proveedor para la web, otro para el email y otro para las redes. Ahora lo tengo todo con Atlántica y duermo tranquilo."',
+    'testimonials.t1.quote': '"Antes tenía un proveedor para la web, otro para el email y otro para las redes. Ahora lo tengo todo con Travesía21 y duermo tranquilo."',
     'testimonials.t1.name': 'Manuel Rodríguez',
     'testimonials.t1.role': 'Taller Mecánico · A Coruña',
     'testimonials.t1.initials': 'MR',
@@ -161,7 +161,7 @@ export const ui = {
     'footer.legal.privacy': 'Política de privacidad',
     'footer.legal.cookies': 'Cookies',
     'footer.legal.kit': 'Kit Digital',
-    'footer.copyright': '© 2026 Atlántica Digital. Todos los derechos reservados.',
+    'footer.copyright': '© 2026 Travesía21. Todos los derechos reservados.',
 
     // Blog
     'nav.blog': 'Blog',
@@ -179,7 +179,7 @@ export const ui = {
     'blog.locationLabel': 'Ubicación',
 
     // Meta
-    'meta.title': 'Atlántica Digital — Servicios Digitales para Pymes',
+    'meta.title': 'Travesía21 — Servicios Digitales para Pymes',
     'meta.description': 'Hosting, web, email, SEO y marketing digital para pymes y autónomos de Galicia y toda España.',
   },
   en: {
@@ -300,7 +300,7 @@ export const ui = {
     'testimonials.tag': 'Clients',
     'testimonials.title': 'What our clients say',
     'testimonials.subtitle': 'Real businesses with real results.',
-    'testimonials.t1.quote': '"I used to have one provider for the website, another for email and another for social media. Now I have everything with Atlántica and I sleep well."',
+    'testimonials.t1.quote': '"I used to have one provider for the website, another for email and another for social media. Now I have everything with Travesía21 and I sleep well."',
     'testimonials.t1.name': 'Manuel Rodríguez',
     'testimonials.t1.role': 'Auto Repair Shop · A Coruña',
     'testimonials.t1.initials': 'MR',
@@ -337,7 +337,7 @@ export const ui = {
     'footer.legal.privacy': 'Privacy policy',
     'footer.legal.cookies': 'Cookies',
     'footer.legal.kit': 'Kit Digital',
-    'footer.copyright': '© 2026 Atlántica Digital. All rights reserved.',
+    'footer.copyright': '© 2026 Travesía21. All rights reserved.',
 
     // Blog
     'nav.blog': 'Blog',
@@ -355,7 +355,7 @@ export const ui = {
     'blog.locationLabel': 'Location',
 
     // Meta
-    'meta.title': 'Atlántica Digital — Digital Services for SMEs',
+    'meta.title': 'Travesía21 — Digital Services for SMEs',
     'meta.description': 'Hosting, web, email, SEO and digital marketing for SMEs and freelancers in Galicia and all of Spain.',
   },
 } as const;

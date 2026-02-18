@@ -10,7 +10,7 @@ locationLabels:
   - "Santiago de Compostela"
   - "Galicia"
 image: "/blog/diseno-web-tatuador-santiago-de-compostela.svg"
-author: "Atlántica Digital"
+author: "Travesía21"
 tags:
   - diseno-web
   - tatuajes
@@ -170,7 +170,7 @@ No necesitas gastar una fortuna. Una web profesional para un estudio de tatuajes
 - **Adaptación móvil** perfecta en todos los dispositivos
 - **Hosting rápido y seguro** con SSL incluido y copias de seguridad
 
-En Atlántica Digital creamos webs para negocios locales en Santiago y toda Galicia. Sabemos cómo posicionar un estudio de tatuajes porque **estamos aquí, conocemos la ciudad y entendemos el mercado local**.
+En Travesía21 creamos webs para negocios locales en Santiago y toda Galicia. Sabemos cómo posicionar un estudio de tatuajes porque **estamos aquí, conocemos la ciudad y entendemos el mercado local**.
 
 ---
 
@@ -198,7 +198,7 @@ Uno de nuestros clientes en el sector creativo pasó de recibir 2-3 consultas se
 
 Si tienes un estudio de tatuajes en Santiago de Compostela y quieres dejar de depender solo de las redes sociales, necesitas una web que trabaje por ti las 24 horas.
 
-En Atlántica Digital te ayudamos a:
+En Travesía21 te ayudamos a:
 
 - Diseñar una web que refleje tu estilo artístico único
 - Posicionarla en Google para búsquedas locales en Santiago de Compostela

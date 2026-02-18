@@ -80,8 +80,8 @@
   <!-- Brand -->
   <g transform="translate(80, 540)">
     <rect width="36" height="36" rx="8" fill="url(#brand)"/>
-    <text x="12" y="26" fill="white" font-family="Georgia, 'Playfair Display', serif" font-size="20" font-weight="800">A</text>
-    <text x="48" y="25" fill="#9898a8" font-family="'DM Sans', Arial, sans-serif" font-size="15" font-weight="500">atlanticadigital.es</text>
+    <text x="12" y="26" fill="white" font-family="Georgia, 'Playfair Display', serif" font-size="20" font-weight="800">T</text>
+    <text x="48" y="25" fill="#9898a8" font-family="'DM Sans', Arial, sans-serif" font-size="15" font-weight="500">travesia21.es</text>
   </g>
 
   <!-- Decorative border -->
