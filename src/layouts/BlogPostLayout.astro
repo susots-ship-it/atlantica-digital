@@ -28,11 +28,34 @@ const formattedDate = new Date(frontmatter.date).toLocaleDateString(lang === 'es
   month: 'long',
   day: 'numeric',
 });
+
+const pageTitle = `${frontmatter.title} | Travesía21`;
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": frontmatter.title,
+  "description": frontmatter.description,
+  "author": {
+    "@type": "Person",
+    "name": frontmatter.author
+  },
+  "datePublished": frontmatter.date,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Travesía21",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.travesia21.es/favicon.svg"
+    }
+  },
+  ...(frontmatter.image ? { "image": `https://www.travesia21.es${frontmatter.image}` } : {})
+};
 ---
 
-<BaseLayout lang={lang}>
+<BaseLayout lang={lang} title={pageTitle} description={frontmatter.description} image={frontmatter.image ? `https://www.travesia21.es${frontmatter.image}` : undefined}>
   <Nav lang={lang} />
 
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
   <main class="pt-32 pb-20 px-4 md:px-8">
     <article class="max-w-[800px] mx-auto">
       <!-- Breadcrumb -->
