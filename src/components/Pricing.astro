@@ -11,7 +11,8 @@ const t = useTranslations(lang);
 
 const plans = [
   { key: 'essential', featured: false },
-  { key: 'growth', featured: true },
+  { key: 'growth', featured: false },
+  { key: 'starter', featured: true },
   { key: 'premium', featured: false },
 ] as const;
 ---
@@ -23,7 +24,7 @@ const plans = [
     <p class="text-[1.05rem] text-txt-secondary leading-relaxed">{t('pricing.subtitle')}</p>
   </div>
 
-  <div class="max-w-[1100px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+  <div class="max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
     {plans.map(({ key, featured }) => (
       <div class:list={[
         'bg-surface-card border rounded-card p-10 relative transition-all duration-400 hover:-translate-y-1 reveal',
@@ -42,7 +43,7 @@ const plans = [
           <span class="text-xl font-semibold text-txt-secondary">€</span>
           <span class="font-display text-5xl font-extrabold leading-none">{t(`pricing.${key}.price` as any)}</span>
         </div>
-        <div class="text-sm text-txt-muted mb-8">{t('pricing.period')}</div>
+        <div class="text-sm text-txt-muted mb-8">{t(`pricing.${key}.period` as any) || t('pricing.period')}</div>
         <ul class="flex flex-col gap-3 mb-8">
           {[1, 2, 3, 4, 5, 6].map(n => (
             <li class="flex items-start gap-3 text-sm text-txt-secondary pricing-bullet">
